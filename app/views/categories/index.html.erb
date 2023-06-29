@@ -7,7 +7,7 @@
 <div class="category-container">
   <% @categories.each do |category| %>
     <div class="category">
-      <%= link_to user_category_trade_path(category_id: category.id), class:'categ' do %>
+      <%= link_to user_category_trades_path(category_id: category.id), class:'categ' do %>
       <div class="cat">
         <p><%= category.icon %></p>
         <p><%= category.name %></p>
@@ -21,15 +21,3 @@
 </div>
 
 <%= link_to "Add category", new_user_category_path %>
-<% @categories.each do |category| %>
-  <div class="category">
-    <% category.trades.each do |trade| %>
-      <%= link_to user_category_trade_path(category_id: category.id, id: trade.id), class: 'categ' do %>
-        <div class="cat">
-          <p><%= category.icon %></p>
-          <p><%= category.name %></p>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-<% end %>
