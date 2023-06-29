@@ -1,12 +1,35 @@
+<%= stylesheet_link_tag 'category_index' %>
+
 <p><%= notice %></p>
 
-<h1>categories</h1>
+<h1>Categories</h1>
 
-<div id="groups">
+<div class="category-container">
   <% @categories.each do |category| %>
-    <P><%= category.name %></p>
-    <P><%= category.icon %></p>
+    <div class="category">
+      <%= link_to user_category_trade_path(category_id: category.id), class:'categ' do %>
+      <div class="cat">
+        <p><%= category.icon %></p>
+        <p><%= category.name %></p>
+        <p>$<%= category_total(category.id) %></p>
+        <p><%= get_local_date %></p>
+      </div>
+      <% end %>
+    </div>
+    <br>
   <% end %>
 </div>
 
 <%= link_to "Add category", new_user_category_path %>
+<% @categories.each do |category| %>
+  <div class="category">
+    <% category.trades.each do |trade| %>
+      <%= link_to user_category_trade_path(category_id: category.id, id: trade.id), class: 'categ' do %>
+        <div class="cat">
+          <p><%= category.icon %></p>
+          <p><%= category.name %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

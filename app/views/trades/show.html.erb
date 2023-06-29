@@ -3,8 +3,8 @@
 <%= render @trade %>
 
 <div>
-  <%= link_to "Edit this trade", edit_trade_path(@trade) %> |
-  <%= link_to "Back to trades", trades_path %>
+  <%= link_to "Edit this trade",  edit_user_category_trade_path(@trade) %> |
+  <%= link_to "Back to trades", user_categories_path %>
 
-  <%= button_to "Destroy this trade", @trade, method: :delete %>
+  
 </div>

@@ -9,6 +9,8 @@ class TradesController < ApplicationController
 
   # GET /trades/1 or /trades/1.json
   def show
+    @trade = Trade.find(params[:id])
+    @user = User.find(params[:user_id])
   end
 
   # GET /trades/new
@@ -24,6 +26,8 @@ class TradesController < ApplicationController
   # POST /trades or /trades.json
   def create
     @trade = Trade.new(trade_params)
+    # this associate the trade with the selected category
+    @trade.category_ids = params[:trade][:category_ids]
     @trade.user = current_user
     @categories = Category.all
     respond_to do |format|

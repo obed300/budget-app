@@ -1,10 +1,10 @@
-<%= form_with(model: @trade, url:user_category_trades_path, method: :post, local: true) do |form| %>
-  <% if trade.errors.any? %>
+<%= form_with(model: @trade, url: user_category_trades_path, method: :post, local: true) do |form| %>
+  <% if @trade.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(trade.errors.count, "error") %> prohibited this trade from being saved:</h2>
+      <h2><%= pluralize(@trade.errors.count, "error") %> prohibited this trade from being saved:</h2>
       <ul>
-        <% trade.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% @trade.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
         <% end %>
       </ul>
     </div>
@@ -20,10 +20,10 @@
     <%= form.number_field :amount %>
   </div>
 
-<div>
-  <%= form.label "Categories" %>
-  <%= form.collection_select :category_ids, @categories, :id, :name, { prompt: "Select a category", multiple: true } %>
-</div>
+  <div>
+    <%= form.label "Categories" %>
+    <%= form.collection_select :category_ids, @categories, :id, :name, { prompt: "Select a category", multiple: true } %>
+  </div>
 
   <div>
     <%= form.submit %>
