@@ -4,6 +4,7 @@ class TradesController < ApplicationController
   # GET /trades or /trades.json
   def index
     @trades = Trade.all
+   
   end
 
   # GET /trades/1 or /trades/1.json
@@ -13,6 +14,7 @@ class TradesController < ApplicationController
   # GET /trades/new
   def new
     @trade = Trade.new
+    @categories = Category.all
   end
 
   # GET /trades/1/edit
