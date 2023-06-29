@@ -22,10 +22,11 @@ class TradesController < ApplicationController
   # POST /trades or /trades.json
   def create
     @trade = Trade.new(trade_params)
-
+    @trade.user = current_user
+    @categories = Category.all
     respond_to do |format|
       if @trade.save
-        format.html { redirect_to trade_url(@trade), notice: "Trade was successfully created." }
+        format.html { redirect_to user_category_trades_path(@trade), notice: "Trade was successfully created." }
         format.json { render :show, status: :created, location: @trade }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -65,6 +66,6 @@ class TradesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def trade_params
-      params.require(:trade).permit(:name, :amount)
+      params.require(:trade).permit(:name, :amount, category_ids: [])
     end
 end
