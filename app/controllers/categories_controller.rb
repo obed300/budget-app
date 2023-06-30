@@ -4,7 +4,6 @@ class CategoriesController < ApplicationController
   # GET /categoriess or /categoriess.json
   def index
     @categories = Category.includes(:trades).all
-    @user = User.find(params[:user_id])
   end
 
   # GET /categoriess/1 or /categoriess/1.json

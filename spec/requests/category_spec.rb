@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Categoriess', type: :request do
+RSpec.describe 'Categories', type: :request do
   include Devise::Test::IntegrationHelpers
 
   let(:user) { User.create!(name: 'apple', email: 'gramsy1@example.mail', password: '123456') }
@@ -41,24 +41,7 @@ RSpec.describe 'Categoriess', type: :request do
     end
     it 'check the response body includes correct text' do
       get "/users/#{user.id}/categories/new"
-      expect(response.body).to include('<h1>Add a new Category</h1>')
+      expect(response.body).to include('<h1 class="cat-title">Add a new Category</h1>')
     end
   end
-
-  #   describe 'GET /new' do
-  #     it 'should successfully request for new group form' do
-  #       get "/users/#{user.id}/groups/new"
-  #       expect(response).to be_successful
-  #       expect(response.status).to eq(200)
-  #     end
-
-  #     it 'should successfully render new template' do
-  #       get "/users/#{user.id}/groups/new"
-  #       expect(response).to render_template(:new)
-  #     end
-  #     it 'check the response body includes correct text' do
-  #       get "/users/#{user.id}/groups/new"
-  #       expect(response.body).to include("<h4 class='title'>CREATE CATEGORY</h4>")
-  #     end
-  #   end
 end

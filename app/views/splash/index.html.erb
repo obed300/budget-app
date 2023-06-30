@@ -2,7 +2,7 @@
 
 <div class="splash-container">
   <h1>
-    <%= link_to "WELCOME TO MY BUDJET APP", new_user_session_path, class: "splash-btn" %>
+    <%= link_to "WELCOME TO MY BUDJET APP", user_categories_path(user_id: current_user.id), class: "splash-btn" %>
   </h1>
 </div>
 
