@@ -1,10 +1,11 @@
-<h1>Add a new Category</h1>
+<%= stylesheet_link_tag 'form_cat' %>
 
-<%= form_with(model: @category, url:user_categories_path, method: :post, local: true) do |form| %>
+<h1 class="cat-title">Add a new Category</h1>
+
+<%= form_with(model: @category, url: user_categories_path, method: :post, local: true, class: "category-form") do |form| %>
   <% if @category.errors.any? %>
-    <div style="color: red">
+    <div class="error-messages">
       <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
-
       <ul>
         <% @category.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -13,17 +14,17 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-group">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-input" %>
   </div>
 
-  <div>
-    <%= form.label :icon %>
-    <%= form.file_field :icon %>
+  <div class="form-group">
+    <%= form.label :icon, class: "form-label" %>
+    <%= form.file_field :icon, class: "form-input" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit "Submit", class: "form-button" %>
   </div>
 <% end %>

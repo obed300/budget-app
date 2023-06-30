@@ -23,8 +23,8 @@ RSpec.describe 'Categoriess', type: :request do
     end
 
     it 'should successfully render index template' do
-        get "/users/#{user.id}/categories"
-        expect(response.body).to include('<h1>Categories</h1>')
+      get "/users/#{user.id}/categories"
+      expect(response.body).to include('<h1>Categories</h1>')
     end
   end
 
@@ -41,24 +41,24 @@ RSpec.describe 'Categoriess', type: :request do
     end
     it 'check the response body includes correct text' do
       get "/users/#{user.id}/categories/new"
-      expect(response.body).to include("<h1>Add a new Category</h1>")
+      expect(response.body).to include('<h1>Add a new Category</h1>')
     end
   end
 
-#   describe 'GET /new' do
-#     it 'should successfully request for new group form' do
-#       get "/users/#{user.id}/groups/new"
-#       expect(response).to be_successful
-#       expect(response.status).to eq(200)
-#     end
+  #   describe 'GET /new' do
+  #     it 'should successfully request for new group form' do
+  #       get "/users/#{user.id}/groups/new"
+  #       expect(response).to be_successful
+  #       expect(response.status).to eq(200)
+  #     end
 
-#     it 'should successfully render new template' do
-#       get "/users/#{user.id}/groups/new"
-#       expect(response).to render_template(:new)
-#     end
-#     it 'check the response body includes correct text' do
-#       get "/users/#{user.id}/groups/new"
-#       expect(response.body).to include("<h4 class='title'>CREATE CATEGORY</h4>")
-#     end
-#   end
+  #     it 'should successfully render new template' do
+  #       get "/users/#{user.id}/groups/new"
+  #       expect(response).to render_template(:new)
+  #     end
+  #     it 'check the response body includes correct text' do
+  #       get "/users/#{user.id}/groups/new"
+  #       expect(response.body).to include("<h4 class='title'>CREATE CATEGORY</h4>")
+  #     end
+  #   end
 end

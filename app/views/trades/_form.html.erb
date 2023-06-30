@@ -1,31 +1,34 @@
-<%= form_with(model: @trade, url: user_category_trades_path, method: :post, local: true) do |form| %>
+<%= stylesheet_link_tag 'form_trade' %>
+
+<%= form_with(model: @trade, url: user_category_trades_path, method: :post, local: true, class: "trade-form") do |form| %>
   <% if @trade.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(@trade.errors.count, "error") %> prohibited this trade from being saved:</h2>
-      <ul>
+    <div class="error-messages">
+      <h2 class="error-heading"><%= pluralize(@trade.errors.count, "error") %> prohibited this trade from being saved:</h2>
+      <ul class="error-list">
         <% @trade.errors.full_messages.each do |error| %>
-          <li><%= error %></li>
+          <li class="error-item"><%= error %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-group">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-input" %>
   </div>
 
-  <div>
-    <%= form.label :amount %>
-    <%= form.number_field :amount %>
+  <div class="form-group">
+    <%= form.label :amount, class: "form-label" %>
+    <%= form.number_field :amount, class: "form-input" %>
   </div>
 
-  <div>
-    <%= form.label "Categories" %>
-    <%= form.collection_select :category_ids, @categories, :id, :name, { prompt: "Select a category", multiple: true } %>
+  <div class="form-group">
+    <%= form.label "Categories", class: "form-label" %>
+    <%= form.collection_select :category_ids, @categories, :id, :name, { prompt: "Select a category", multiple: true }, class: "form-input" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit class: "form-button" %>
   </div>
 <% end %>
+

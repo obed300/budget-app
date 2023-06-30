@@ -16,6 +16,12 @@
  *{
     max-width: 767px; 
     list-style: none;
+    border-radius: 10px;
+  }
+
+  body{
+    background-color: rgb(112, 129, 192);
+    max-width: 767px;
   }
   
 
