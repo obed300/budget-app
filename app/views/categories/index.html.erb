@@ -7,12 +7,12 @@
 <div class="category-container">
   <% @categories.each do |category| %>
     <div class="category">
-      <%= link_to user_category_trades_path(category_id: category.id), class:'categ' do %>
+      <%= link_to user_category_trades_path(user_id: current_user.id, category_id: category.id), class:'categ' do %>
       <div class="cat">
-        <p><%= category.icon %></p>
-        <p><%= category.name %></p>
-        <p>$<%= category_total(category.id) %></p>
-        <p><%= get_local_date %></p>
+        <p><%= image_tag(category.icon, size: '80x80', class: 'icon-upload') if category.icon.present? %></p>
+        <p class="cat-name"><%= category.name %></p>
+        <p class="category-total">$<%= category_total(category.id) %></p>
+        <p><%= category.created_at.strftime('%d %B %Y') %></p>
       </div>
       <% end %>
     </div>
@@ -20,4 +20,4 @@
   <% end %>
 </div>
 
-<%= link_to "Add category", new_user_category_path %>
+<p class="add-cat"><%= link_to "Add category", new_user_category_path %></p>

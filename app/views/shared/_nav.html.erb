@@ -3,21 +3,29 @@
 <header class="nav-container">
   <div class="navbar">
     <a href="#" id="toggle-menu">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="menu" viewBox="0 0 24 24">
+          <path fill="white" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
         </svg>
     </a>
     <a href="#" id="close">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="24" viewBox="0 0 24 24">
          <path fill="currentColor" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41z"/>
         </svg>
     </a>
-    <ul class="navbar-menu">
-      <!-- Add your menu items here -->
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
+
+<ul class="navbar-menu">
+  <% if current_user %>
+    <li class='nav-list'><%= link_to 'HOME', user_categories_path(user_id: current_user.id) %></li>
+    <li class='nav-list'><%= link_to 'SIGN IN', user_session_path(user_id: current_user.id) %></li>
+  <% else %>
+    <li class='nav-list'><%= link_to 'HOME', root_path %></li>
+    <li class='nav-list'><%= link_to 'SIGN IN', new_user_session_path %></li>
+  <% end %>
+  <li class='nav-list'><%= link_to 'SIGN UP', new_user_registration_path %></li>
+</ul>
+
+
+
   </div>   
   <h1 class="transaction">Transactions</h1> 
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">

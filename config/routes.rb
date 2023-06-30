@@ -4,14 +4,14 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  
-  
+
+
   resources :users, only: %i[index show new edit] do
     resources :categories do
-      resources :trades 
+      resources :trades
     end
   end
-  
+
   root 'splash#index'
   get '/splash', to: 'splash#index'
 

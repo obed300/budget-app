@@ -1,1 +1,1 @@
-json.partial! "trades/trade", trade: @trade
+json.partial! 'trades/trade', trade: @trade

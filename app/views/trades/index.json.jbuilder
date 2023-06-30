@@ -1,1 +1,1 @@
-json.array! @trades, partial: "trades/trade", as: :trade
+json.array! @trades, partial: 'trades/trade', as: :trade

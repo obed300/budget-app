@@ -1,15 +1,23 @@
+<%= stylesheet_link_tag 'trade_index' %>
+
 <p><%= notice %></p>
 
-<h1>Trades</h1>
+<div class='trade'>
+  <h1>Category Transactions</h1>
+  <p>Total: $<%= @trades.sum(:amount) %></p>
+</div>
 
 <div id="trades">
   <% @trades.each do |trade| %>
-    <p>
-      <%= trade.name %>
-      <%= trade.amount %>
-    </p>
-    
+    <div class="cat-trans">
+      <p class="trade-name"><%= trade.name %></p>
+      <p class="trade-amount">$<%= trade.amount %></p>
+    </div>
+    <br>
   <% end %>
 </div>
+<div class="tran-button">
+  <p><%= link_to "Back to categories", user_categories_path %></p>
+  <p><%= link_to "New trade", new_user_category_trade_path %></p>
+</div>
 
-<%= link_to "New trade", new_user_category_trade_path %>

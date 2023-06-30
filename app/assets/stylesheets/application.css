@@ -13,9 +13,10 @@
  *= require_tree .
  *= require_self
  */
- body {
-    max-width: 767px;
-    min-height: 100vh;
+ *{
+    max-width: 767px; 
+    list-style: none;
   }
+  
 
   
