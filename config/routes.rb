@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  resources :users, only: %i[index show new edit] do
+  resources :users, only: [:index] do
     resources :categories do
       resources :trades
     end

@@ -1,7 +1,5 @@
 <%= stylesheet_link_tag 'trade_index' %>
 
-<p><%= notice %></p>
-
 <div class='trade'>
   <h1>Category Transactions</h1>
   <p>Total: $<%= @trades.sum(:amount) %></p>

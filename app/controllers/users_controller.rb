@@ -4,11 +4,12 @@ class UsersController < ApplicationController
   # GET /users or /users.json
   def index
     @users = User.all
-    @user = User.find(params[:user_id])
   end
 
   # GET /users/1 or /users/1.json
-  def show; end
+  def show
+    @user = User.find(params[:id])
+  end
 
   # GET /users/new
   def new
@@ -60,7 +61,11 @@ class UsersController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_user
-    @user = User.find(params[:id])
+    if params[:id] == 'sign_out'
+      # Handle sign out logic or redirect as needed
+    else
+      @user = User.find(params[:id])
+    end
   end
 
   # Only allow a list of trusted parameters through.
