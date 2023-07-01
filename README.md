@@ -2,7 +2,7 @@
 
 <div align="center">
   <img src="app/assets/images/logo-no-background.png" alt="logo" width = "100"/>
-  <h1><b> 💰 Save Sense 💸 </b></h1>
+  <h1><b> 💰 Budget App 💸 </b></h1>
 </div>
 
 <!-- TABLE OF CONTENTS -->
