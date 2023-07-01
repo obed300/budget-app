@@ -1,0 +1,30 @@
+<%= stylesheet_link_tag 'form_cat' %>
+
+<h1 class="cat-title">Add a new Category</h1>
+
+<%= form_with(model: @category, url: user_categories_path, method: :post, local: true, class: "category-form") do |form| %>
+  <% if @category.errors.any? %>
+    <div class="error-messages">
+      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+      <ul>
+        <% @category.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-input" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :icon, class: "form-label" %>
+    <%= form.file_field :icon, class: "form-input" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit "Submit", class: "form-button" %>
+  </div>
+<% end %>

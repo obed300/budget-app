@@ -1,0 +1,50 @@
+.cat-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .category-form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #6386c1;
+    border: 5px solid #ccc;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5); 
+    border-radius: 4px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-button {
+    padding: 8px 16px;
+    background-color: #406eb6;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .form-button:hover {
+    background-color: #45a049;
+  }
+  
+  .form-button:active {
+    background-color: #3e8940;
+  }
+  
