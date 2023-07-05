@@ -67,8 +67,7 @@
 
 # 🚀 Live Demo <a name="live-demo"></a>
 
-👉 [Live Demo](https://obed.onrender.com/)<br>
-👉 [Video Walkthrough](https://www.loom.com/share/5c874840f14f4ec6b318283de6068885?sid=24fc47a7-bcaf-43bc-a63b-6f4efb2c3259)
+👉 [Live Demo](https://ob-pk09.onrender.com)<br>
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
